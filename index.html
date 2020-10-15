@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+    <html>
+    <head> 
+        <title></title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    </head>
+    <body>
+        <style type="text/css">
+
+            /* Required for full background image */
+
+            html,
+            body,
+            header,
+            #intro-section {
+                height: 100%;
+            }
+
+            @media (max-width: 740px) {
+                html,
+                body,
+                header,
+                #intro-section {
+                    height: 100vh;
+                }
+            }
+
+            .top-nav-collapse, .page-footer {
+                background-color: #563e91 !important;
+            }
+
+            .navbar:not(.top-nav-collapse) {
+                background: transparent !important;
+            }
+
+            @media (max-width: 991px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: #563e91 !important;
+                }
+            }
+
+            .rgba-gradient {
+                background: rgba(35, 7, 77, 0.6);
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+
+            .img-gradient:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
+                /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* Opera 11.10+ */
+                /* IE10+ */
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 47, 75, 0.5)), to(rgba(220, 66, 37, 0.5)));
+                background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000', GradientType=0);
+                /* IE6-9 */
+            }
+
+            img{ max-width:100%;}
+
+.gallery_box li{ width:33.333333%; max-width: 100% ; display:inline-block; float: left; text-align: center; overflow: hidden;    position: relative;}
+.gallery_box{ padding:0;display: flow-root;}
+
+.gallery_box li:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.gallery_box li img{-webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;}
+.gallery_box li:nth-child(even) {
+    height: 304px;
+}
+.gallery_box li:nth-child(odd) {
+    height: 438px; 
+}
+.gallery_box li:nth-child(odd) .box_data{ background:rgba(0,0,0,0.17) }
+.gallery_box li:nth-child(even) .box_data{ background:rgba(0,44,255,0.27) }
+.gallery_box .box_data{ position:absolute; top: 0; left: 0; right:0; bottom:0; color:#fff;}
+.gallery_box .box_data span{ position:absolute; top: 50%; transform: translateY(-50%); left:0 ; right:0; font-size:24px;}
+.gallery_box li:hover .box_data{ background:rgba(255,0,39,0.55)}
+
+        </style>
+        <header>
+  <!-- Navbar -->
+            <!--<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Navbar</a>
+
+       
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about covid 19" data-offset="90">About COVID 19</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#world statistics" data-offset="90">World Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#my ideology" data-offset="90">My Ideology</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials" data-offset="30">Testimonials</a>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>-->
+        <!-- Navbar -->
+        <!-- Full Page Intro -->
+        <div id="intro-section" class="view">
+            <video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline
+            autoplay muted loop>
+            <source src="https://mdbootstrap.com/img/video/animation.mp4" type="video/mp4">
+            </video>
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+                <!-- Content -->
+                <div class="container px-md-3 px-sm-0">
+                    <!--Grid row-->
+                    <div class="row wow fadeIn">
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-4 black-text text-center wow fadeIn">
+                            <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">My Precious Radha Dear</h3>
+                            <hr class="hr-light my-4 w-75">
+                            <h4 class="subtext-header mt-2 mb-4"> I tried, Hope for the Best 🥰</h4>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+        </div>
+        <!-- Full Page Intro -->
+    </header>
+
+    <!--Main layout-->
+    <main>
+
+        <!--Section: about-->
+        <section id="about covid 19" class="py-5">
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Section heading -->
+                <h2 class="h1-responsive font-weight-bold text-center mb-5">My Little World</h2>
+                <!-- Section description -->
+                <p class="lead grey-text text-center w-responsive mx-auto mb-5">Let's go for a walk 😁<br><br>
+
+                    M :- so where u want to visit this time?<br>
+                    R :- let's 🤔 move to ladakh.<br><br>
+                    
+                    M :- hmmmm. U know what I will buried u in snow 😈 .......<br>
+                    R :- like I will let u do what u want, forget.<br>
+                    It's mine plan I will buried u in snow, and u know what, u can't able to resist 😈.<br><br>
+                    
+                    M :- that's horrible 🥶<br>
+                    R :- hehehe, too funny<br><br><br><br>
+                    Yaar iss song me craziness uff, it's awesome, chalge hum bhi ladakh, karna ha bhut si masti😜, that butterfly in snow to confirm 😌
+                </p>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-5 text-center text-lg-left">
+                        <center><img class="img-fluid" src="pic/pic1.jpg" alt="Sample image"></center>
+                    </div>
+                    <!-- Grid column -->
+                    <p class="lead grey-text text-center w-responsive mx-auto mb-5"><br>Let's go for a walk 😁<br><br>
+                        M :-  So this time hum log chalte ha Skydiving karne 😜<br>
+                        R :- ooho dar jao ge tum niche dekh kar.<br>
+                        M :- tumko bas yehi lagega hi, I don't fear form height, ye alag baat ha tumko lagta ha tab mere ko bol rahi😂<br>
+                        R :- mtlb kuch bhi, mere ko nhi lagta.<br>
+                        M :- fine vahi dekh lege🤗<br><br><br><br>
+                        Yaar iss song me bhi kitne interesting activities ha 😩 aabhi karne ka mood karne lagta ha dekh kar.<br><br>
+
+                        Sweetie iss ko karne ke liye syad Andaman Nicobar chalna sahi rahe ga, surfing karna ha yaar, and yese yese or bhut kuch ha jiska to mere ko name bhi nhi pata kya kya bolte ha😅 but karna to ha🔥<br><br>
+                        
+                        Bhut dreams ha yaar bhut sare aab to or small small hogye ha dreams or numbers me bas increase ho rha h, koi na sab hoga jese bhi ho.</p>
+                    <!-- Grid column -->
+                    <div class="col-lg-7">
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-1">
+                                <i class="fa fa-mail-forward fa-lg black-text"></i>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-xl-10 col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">Karishma </h5>
+                                <p class="grey-text">Radha tu hai uss Suraj ki Roshni ki tarah<br>
+                                    Jo chamakna kabhi Na bhulta hai<br>
+                                    Q Hoti hai udaas Kale Badal ke aa jaane se<br>
+                                    Yaar iss condition me bhi<br>
+                                    aapke tyndall effect roshni de jate h<br><br>
+                                    
+                                    "Time has everything just wait Radha dear you have alot unexpected things upcoming"🥰<br><br>
+                                    
+                                    Ho aap vo karishma jisse chahana sab koi chahte h<br>
+                                    chaho ya na chaho aap ho uss gulab ki tarah<br>
+                                    Jismein kate hote hain but aacha lagta hai🥰<br>
+                                    (Kate mtlb Irritate karti aap bhut ho😫🤗)<br>
+                                    Yaar tu ha vo mushroom/paneer ke dishes<br>
+                                    Jisko mein khake bolu waah waah 🤤🤤<br>
+                                    Suraj bhi hota ha solar eclipse ka shikar<br>
+                                    Kisi ke pass, sab kuch nhi ha<br>
+                                    But Jo ha vo best ha<br>
+                                    Or yaar tere pass yese kitne uncountable things ha, be proud🔥.</p>
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!--Grid row-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Container -->
+
+        </section>
+        <!--Section: about-->
+
+        <!--Section: projects-->
+        <section id="world statistics" class="text-center py-5" style="background-color: #eee;">
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Section heading -->
+                <h2 class="h1-responsive font-weight-bold mb-5">Poetic world</h2>
+                <!-- Section description -->
+                <p class="grey-text w-responsive mx-auto mb-5">
+.</p>
+
+                <!-- Grid row -->
+                <div class="row text-center">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="pic/pic2.jpg" class="img-fluid" alt="Sample project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3"> Crazy ha meri Radha 🥰❤️ </h4>
+                            <p class="grey-text">Ho thori si sanki<br>
+                                Ho thori si pagal<br>
+                                Ho thori si crazy<br>
+                                Ho thori si irritating<br>
+                                Ho thori si masoom<br>
+                                Ho thori si pyari<br>
+                                Ho thori si itarane wali<br><br>
+                                
+                                Kya kare aapka<br>
+                                Iss gusse wale face ka<br>
+                                Kare kya hum<br>
+                                Andher se pura try ki<br>
+                                Hasne ka but<br>
+                                Face pe wahi<br>
+                                Cute wali Radha<br>
+                                Dikhi🥰<br><br>
+                                
+                                Hasi to aane se rahi aapki<br>
+                                But iss nanhi si muskan<br>
+                                Bhi kafi h, dua karte hain<br>
+                                Yese hi muskarte rho<br>
+                                Hamesha 🥰😊🥰
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="pic/pic3.jpg" class="img-fluid" alt="Sample project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3">Badal </h4>
+                            <p class="grey-text">Din Ho ya Raat Ho<br>
+                                savera ho ya Sandhya<br>
+                                ujala ho ya andhera<br>
+                                to tu rahti hai har jagah🥰<br><br>
+                                
+                                Maaf Karna yaar<br>
+                                kar deta hun galti<br>
+                                Hu to Insan hi Na<br>
+                                Ho jaati hai<br>
+                                maaf Karna 🙇‍♂️<br>
+                                <br>
+                                pata hai<br>
+                                tu hai uss Badal ki tarah<br>
+                                Joki hota hai <br>
+                                kabhi Kala <br>
+                                kabhi baigani <br>
+                                kabhi Lal <br>
+                                kabhi pila or<br>
+                                kabhi safed bhi<br>
+                                tu hai vo parvat Jo kabhi bikhre Na<br>
+                                to hai vo Pani Jo rahe hamesha Thanda<br>
+                                Tu hai vo Aag jo Jala ke bhasham karne ki kabiliyat rakhti hai<br><br>
+                                
+                                kabhi understimate mat Karna<br>
+                                Tere mein ha vo baat jo tere ko nahin pata<br><br>
+                                
+                                pata hai Sabse acha kya Laga tune Kadar ki mere time ki🤗<br><br>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-6">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="pic/pic4.jpg" alt="Sample project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3"> khamoshi </h4>
+                            <p class="grey-text">Haule se<br>
+                                Dheeme se<br>
+                                Mujhko bato me uljhalo na tum<br>
+                                Narmi ke sath thoda gussa hi karlo na tum<br>
+                                Shanti ko awaaz ki goonjhat me bhar dona tum<br>
+                                Sun zara khamoshi ko halchal me badal dona tum<br>
+                                Ham to baithe hain wahi🥰<br>
+                                Tumhari purani baato ki yaado me<br>
+                                Ab tu aati hai ki mai<br>
+                                Chhu loon tujhe jaise koi<br>
+                                Chand ko chhuna chaahe🥰<br>
+                                Chaahun tujhe jaise koi<br>
+                                Baccha khilona chaahe❤️<br>
+                                Fiqar ki raat mein<br>
+                                Tu sukoon ki neend hai😌<br>
+                                Aab tere bina mere ye ghumna<br>
+                                Jese darawane sapne mere raato ke🥶😫<br>
+                                Aab to ye 7 baje ke andhera bhi<br>
+                                Jese raat ke 2 baje ki shanti bina hawa ke😖<br>
+                                Sun zara khamoshi ko halchal me badal dona tum🥰</p>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Container -->
+
+        </section>
+        <!--Section: projects-->
+
+        <!--Section: ideology-->
+        <section id="my ideology" class="text-center py-5">
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Section heading -->
+                <h2 class="h1-responsive font-weight-bold mb-5">Coconut</h2>
+                <!-- Section description -->
+                <p class="grey-text w-responsive mx-auto mb-5">Meri choti si pyari si coconut 🥰<br><br>
+
+                    Inlogo ka level aapke ass pass bhi nhi ha<br><br>
+                    
+                    Aap ho vaha jha aana chahte h yelog<br>
+                    Aap ho vaha jha namumkin b mumkin bole<br>
+                    Aap ho vaha jha hariyali ho sare jahan<br>
+                    Aap ho vaha jha saato (7) rang milke ek hote h<br>
+                    Aap ho vaha jha chand jaisi roshni h<br>
+                    Aap ho vaha jha khushiya ho <br>
+                    Aap ho vaha jha pe humko bhi bulao🤗🥰
+                </p>
+
+</div>
+<!-- Container -->
+
+</section>
+<!--Section: ideology-->
+
+<!--Section: testimonials-->
+<section id="testimonials" class="text-center py-5" style="background-color: #eee;">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold mb-5">--</h2>
+
+        <!-- Carousel Wrapper -->
+        <div id="carousel-example-1" class="carousel no-flex testimonialcovid-carousel slide carousel-fade"
+        data-ride="carousel" data-interval="false">
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="testimonialcovid">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto mb-4">
+                        <img src="pic/pic5.jpg" class="rounded-circle img-fluid" alt="First sample avatar image">
+                    </div>
+                    <!--Content-->
+                    <p class="grey-text w-responsive mx-auto mb-5">
+                       Thank you 🤗🥰
+                    </p>
+<!--Section: credits-->
+                   
+                    </div>
+                </div>
+                <!-- Card Narrower -->
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Container -->
+</section>
+<!--Section: articles-->
+
+</main>
+<!--Main layout-->
+
+<!-- Footer -->
+<footer class="page-footer font-small pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                    <i class="fab fa-facebook"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                    <i class="fab fa-twitter"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                    <i class="fab fa-google-plus"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                    <i class="fab fa-linkedin"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-dribbble mx-1">
+                    <i class="fab fa-dribbble"> </i>
+                </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+    
+    <!-- Copyright -->
+
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
